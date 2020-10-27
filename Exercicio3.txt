@@ -1,0 +1,34 @@
+-- criando o banco de dados
+create database db_colegio;
+​
+-- acessando banco de dados
+use db_colegio;
+​
+-- criando a tabela
+create table tb_alunos(
+id bigint auto_increment,
+nome varchar(255) not null,
+idade int,
+anoletivo int not null,
+matricula boolean,
+medianota float,
+primary key(id)
+);
+
+-- cadastrando Alunos
+insert into tb_alunos (nome,idade,anoletivo,matricula,medianota) values ("Alan",15,"1º ano do ensino médio",1234,8.5);
+insert into tb_alunos (nome,idade,anoletivo,matricula,medianota) values ("Joyce",16,"2º ano do ensino médio",1234,7);
+insert into tb_alunos (nome,idade,anoletivo,matricula,medianota) values ("Lucas",10,"5º ano",1234,6.75);
+insert into tb_alunos (nome,idade,anoletivo,matricula,medianota) values ("Leandro",12,"7 ºano",1234,5.5);
+insert into tb_alunos (nome,idade,anoletivo,matricula,medianota) values ("Clara",6,"1ºano",1234,8.5);
+insert into tb_alunos (nome,idade,anoletivo,matricula,medianota) values ("Fernanda",15,"1º ano ano do ensino médio",1234,9);
+insert into tb_alunos (nome,idade,anoletivo,matricula,medianota) values ("Andressa",17,"3º ano ano do ensino médio",1234,9.25);
+insert into tb_alunos (nome,idade,anoletivo,matricula,medianota) values ("Fabio",17,"3º ano ano do ensino médio",1234,6.9);​
+
+--  buscando alunos com nota maior e menor que 7
+​
+select * from tb_alunos where medianota<7;
+select * from tb_alunos where medianota>7;
+​
+-- atualizando
+update tb_alunos set anoletivo = "2º ano ano do ensino médio" where id = 7;
